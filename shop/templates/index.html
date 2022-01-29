@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+
+
+
+{% block content %}
+  
+<div class="row">
+    <div class="col-md-12">
+        <form class="card card-sm">
+            <div class="card-body row no-gutters align-items-center ">
+                <div class = "col">
+                <input type="search"  placeholder="Entrez le nom du produit rechercher" name="item-name" class="form-control form-control-bordeless">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-success">Recherche</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    {% for article in article %}
+    <div class="col-md-3">
+        <div class="card">
+            <img src="{{article.image}}" alt="" class="card-ing-top">
+            <div class="card-body">
+              <div class="card-title">{{article.titre}}</div>
+                <div class=" style color:rgb(221, 146, 7)" card-text>$ {{article.prix}}</div>
+                <a href="{{article.id}}" class="btn btn-warning">Voir</a>
+                <button  class="btn btn-success">Ajouter</button>
+                
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+    </div>
+
+{% endblock content %}
